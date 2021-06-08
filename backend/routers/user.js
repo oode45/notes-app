@@ -16,7 +16,6 @@ user.post('/sessions', async (req, res) => {
             await user.save()
             return res.send({user})
         } else {
-            // return res.status(400).send({error: 'invalid password'})
             return res.sendStatus(400)
         }
     })

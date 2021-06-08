@@ -47,7 +47,6 @@ router.get('/', async (req, res) => {
         const posts = await Post.find({'_id': [...user.posts, ...friendPosts]})
         const userList = await User.find({'_id': user.friends}, 'username')
         const allUserList = await User.find({'_id': {$nin:user._id}}, 'username')
-        console.log(allUserList)
         return res.send({posts, userList, allUserList})
     } catch (e) {
         return res.send('server error')
