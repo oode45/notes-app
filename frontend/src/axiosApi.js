@@ -1,7 +1,8 @@
 import axios from 'axios'
+import {apiDomain} from './config'
 
 const musicUrl = axios.create({
-    baseURL: 'http://localhost:8000'
+    baseURL: apiDomain
 })
 
 export default musicUrl

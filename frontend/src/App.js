@@ -2,7 +2,7 @@ import React from "react"
 import {useSelector} from "react-redux"
 import {Redirect, Route, Switch} from "react-router-dom"
 import Layout from "./UI/Layout"
-import Register from "./containers/registrationForm"
+import Register from "./containers/RegistrationForm"
 import Login from "./components/logInForm"
 import NotesPage from "./containers/NotesPage";
 

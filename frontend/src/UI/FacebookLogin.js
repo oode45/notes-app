@@ -1,9 +1,10 @@
-import React from 'react';
-import {useDispatch} from "react-redux";
-import FacebookLoginButton from 'react-facebook-login/dist/facebook-login-render-props';
-import {Button} from "@material-ui/core";
-import FacebookIcon from '@material-ui/icons/Facebook';
-import {loginFacebookRequest} from "../store/actions/userActions";
+import React from 'react'
+import {useDispatch} from "react-redux"
+import FacebookLoginButton from 'react-facebook-login/dist/facebook-login-render-props'
+import {Button} from "@material-ui/core"
+import FacebookIcon from '@material-ui/icons/Facebook'
+import {loginFacebookRequest} from "../store/actions/userActions"
+import {faceBookId} from '../config'
 
 
 const FacebookLogin = () => {
@@ -11,14 +12,13 @@ const FacebookLogin = () => {
 
     const facebookResponse = response => {
         if (response.id) {
-            console.log(response.id)
             dispatch(loginFacebookRequest(response));
         }
-    };
+    }
 
     return (
         <FacebookLoginButton
-            appId={process.env.REACT_APP_FACEBOOK_APP_ID}
+            appId={faceBookId}
             fields="name,email,picture"
             render={props => (
                 <Button
@@ -33,7 +33,7 @@ const FacebookLogin = () => {
             )}
             callback={facebookResponse}
         />
-    );
+    )
 };
 
 export default FacebookLogin;
