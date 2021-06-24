@@ -59,9 +59,15 @@ export function* logout() {
 export function* facebookLogin({payload: data}) {
     try {
         const response = yield axiosApi.post('/user/facebookLogin', data)
-        yield put(loginSuccess(response.data.user))
-        yield put(historyPush('/'))
-        NotificationManager.success('Login successful')
+        if (response.data.user) {
+            yield put(loginSuccess(response.data.user))
+            yield put(historyPush('/'))
+            NotificationManager.success('Login successful')
+        } else {
+            NotificationManager.error('Could not logout')
+
+        }
+
     } catch (error) {
         NotificationManager.error('Could not logout')
 
