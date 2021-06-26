@@ -24,9 +24,22 @@ When('я ввожу в форму данные:', (table) => {
 });
 
 When('нажимаю на кнопку {string}', (name) => {
+    I.wait(2)
     I.click(`//button//*[contains(text(),'${name}')]/..`)
 });
 
-Then('вижу текст {string}', () => {
+Then('вижу текст {string}', (text) => {
+    I.see(`${text}`)
+});
+
+Then('не вижу текст {string}', (text) => {
+    I.dontSee(`${text}`)
+});
+
+Then('вижу уведомление {string}', () => {
     I.see(`successful`)
+});
+
+Given('я нахожусь на главной странице', () => {
+    I.amOnPage('/')
 });

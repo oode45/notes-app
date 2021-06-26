@@ -13,7 +13,7 @@
       | name     | test  |
       | password | 123   |
     И нажимаю на кнопку "Registration"
-    То вижу текст "Registration successful"
+    То вижу уведомление "Registration successful"
 
   @login
   Сценарий: Логин пользователя
@@ -23,4 +23,4 @@
       | name     | user1  |
       | password | 123   |
     И нажимаю на кнопку "Log in"
-    То вижу текст "Login successful"
+    То вижу уведомление "Login successful"

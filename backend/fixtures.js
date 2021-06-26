@@ -13,7 +13,7 @@ const run = async () => {
     }
 
     const post1 = await Post.create({
-        post: 'lorem ipsum dolor amet',
+        post: 'lorem ipsum dolor sit amet',
         date: new Date(),
         author: 'user1'
     })
@@ -24,11 +24,24 @@ const run = async () => {
         author: 'user2'
     })
 
+    const post3 = await Post.create({
+        post: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, vel?',
+        date: new Date(),
+        author: 'user3'
+    })
+
+    const user3 = await User.create({
+        username: 'user2',
+        password: '123',
+        posts: [post3],
+        friends: []
+    })
+
     const user1 = await User.create({
         username: 'user1',
         password: '123',
         posts: [post1],
-        friends: []
+        friends: [user3]
     })
     const user2 = await User.create({
         username: 'user2',
@@ -36,6 +49,8 @@ const run = async () => {
         posts: [post2],
         friends: [user1]
     })
+
+
 
     await mongoose.connection.close()
 }
