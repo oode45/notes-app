@@ -1,11 +1,22 @@
-const path = require('path');
-const rootPath = __dirname;
+const path = require('path')
+const rootPath = __dirname
+
+const env = process.env.NODE_ENV
+
+let databaseUrl = 'mongodb://localhost/notes'
+let port = 8000
+
+if (env === 'test') {
+    databaseUrl = 'mongodb://localhost/notes_test'
+    port = 8010
+}
 
 module.exports = {
     rootPath,
+    port,
     uploadPath: path.join(rootPath, 'public/uploads'),
     db: {
-        url: 'mongodb://localhost/users',
+        url: databaseUrl,
         options: {
             useNewUrlParser: true,
             useUnifiedTopology: true,

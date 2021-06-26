@@ -118,17 +118,5 @@ user.delete('/sessions', async (req, res) => {
     return res.send(success);
 })
 
-// user.get('/:username', async (req, res) => {
-//     const username = req.params.username
-//     try{
-//         const user = await TrackHistory.find({}).populate('user')
-//         if(user) {
-//            return  res.send(user)
-//         } else return  res.send('user not exist')
-//     }
-//     catch (e) {
-//        return res.status(400).send(e)
-//     }
-// })
 
 module.exports = user

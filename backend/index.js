@@ -6,8 +6,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 const cors = require('cors')
 const app = express()
-
-const PORT = 8000
+const config = require('./config')
 
 app.use(cors())
 app.use(express.json())
@@ -16,14 +15,14 @@ app.use('/posts', posts)
 
 
 const run = async () => {
-    await mongoose.connect('mongodb://localhost/users', {useNewUrlParser: true})
+    await mongoose.connect(config.db.url, {useNewUrlParser: true})
 
     exitHook(async callback => {
         await mongoose.disconnect()
         callback()
     })
-    app.listen(PORT, () => {
-        console.log(`server is running on ${PORT} port`)
+    app.listen(config.port, () => {
+        console.log(`server is running on ${config.port} port`)
     })
 }
 
