@@ -1,9 +1,11 @@
-import React from 'react';
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppToolbar from "./Toolbar";
+import CssBaseline from "@material-ui/core/CssBaseline"
 import Container from "@material-ui/core/Container"
+import AppToolbar from "./Toolbar"
+import React from 'react'
+
 
 const Layout = ({children}) => {
+
     return (
         <>
             <CssBaseline/>
