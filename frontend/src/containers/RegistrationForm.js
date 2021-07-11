@@ -1,14 +1,10 @@
 import {useDispatch} from "react-redux";
 import InputForm from "../components/inputForm";
 import React from "react";
-import {
-    loginRequest,
-    loginSuccess,
-    logoutSuccess, registerRequest
-} from "../store/actions/userActions"
+import {registerRequest} from "../store/actions/userActions"
 import Container from "@material-ui/core/Container";
 
-const RegistrationForm = (props) => {
+const RegistrationForm = () => {
     const dispatch = useDispatch()
 
     const sendForm = event => {

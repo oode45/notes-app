@@ -3,17 +3,17 @@ import {historyPush} from "../actions/historyActions"
 import {put, takeEvery} from 'redux-saga/effects';
 import axiosApi from "../../axiosApi";
 import {
+    loginFacebookRequest,
     loginRequest,
     loginSuccess,
     logoutRequest,
     logoutSuccess,
     registerRequest,
     registerSuccess,
-    loginFacebookRequest,
-    subscribeRequest, unSubscribeRequest
+    subscribeRequest,
+    unSubscribeRequest
 } from "../actions/userActions";
 import * as Sentry from "@sentry/react";
-import {loadSuccess} from "../actions/postActions";
 
 
 export function* registerUser({payload: userData}) {
