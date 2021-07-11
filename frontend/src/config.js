@@ -1,9 +1,9 @@
 const env = process.env.REACT_APP_ENV
 
-let domain = 'localhost:8000'
+let domain = 'http://localhost:8000'
 
 if (env === 'test') {
-    domain = 'localhost:8010'
+    domain = 'http://localhost:8010'
 } else if (env === 'production') {
     domain = '206.189.102.172:8000'
 }
