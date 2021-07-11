@@ -21,8 +21,8 @@ const InputForm = (props) => {
         <Box color="text.primary" mt={2}>
             <form onSubmit={props.emit} noValidate>
                 <Container className={classes.form}>
-                    <TextField id="outlined-basic" label="User name" name="name" variant="outlined"/>
-                    <TextField id="outlined-basic" label="Password" name="password" variant="outlined"/>
+                    <TextField id="outlined-basic" margin="dense" label="User name" name="name" variant="outlined"/>
+                    <TextField id="outlined-basic" margin="dense" label="Password" name="password" variant="outlined"/>
                     <Button variant="contained" className={classes.submit}
                             type="submit">{props.typeOfAuthorization}</Button>
                 </Container>
