@@ -31,7 +31,7 @@ const run = async () => {
     })
 
     const user3 = await User.create({
-        username: 'user2',
+        username: 'user3',
         password: '123',
         posts: [post3],
         friends: []
