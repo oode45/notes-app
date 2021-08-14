@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  notes-api:
+    build: ./backend
+    image: cheshev/notes:api
+    depends_on:
+      - mongodb
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - public:/src/app/public
+    environment:
+      DB_HOST: mongodb
+
+  notes-frontend:
+    build: ./frontend
+    image: cheshev/notes:frontend
+    depends_on:
+      - notes-api
+    restart: always
+    ports:
+      - 80:80
+
+  mongodb:
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  public:
+  mongo_data:
