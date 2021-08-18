@@ -3,13 +3,16 @@ const rootPath = __dirname
 
 const env = process.env.NODE_ENV
 
-let databaseUrl = 'mongodb://localhost/notes'
+const dbhost = process.env.DB_HOST || 'localhost'
+
+let databaseUrl = `mongodb://${dbhost}/shop`
 let port = 8000
 
 if (env === 'test') {
     databaseUrl = 'mongodb://localhost/notes_test'
     port = 8010
 }
+
 
 module.exports = {
     rootPath,
