@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV
 
 const dbhost = process.env.DB_HOST || 'localhost'
 
-let databaseUrl = `mongodb://${dbhost}/shop`
+let databaseUrl = `mongodb://${dbhost}/notes`
 let port = 8000
 
 if (env === 'test') {
