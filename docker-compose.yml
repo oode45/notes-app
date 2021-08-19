@@ -17,6 +17,7 @@ services:
   notes-frontend:
     build: ./frontend
     image: cheshev/notes:frontend
+
     depends_on:
       - notes-api
     restart: always
@@ -24,7 +25,7 @@ services:
       - 80:80
 
   mongodb:
-    image: mongo
+    image: mongo:4.4.5
     volumes:
       - mongo_data:/data/db
 
