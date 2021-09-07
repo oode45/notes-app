@@ -1,10 +1,11 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit"
 
 export const initialState = {
-    isHoverFunctionsButton: false
+    isHoverFunctionsButton: false,
+    cardsArrayFunctions: []
 };
 
-const name = 'mainPage';
+const name = 'mainPage'
 
 const mainPageSlice = createSlice({
     name,
@@ -12,6 +13,12 @@ const mainPageSlice = createSlice({
     reducers: {
         hoverFunctionsButton: (state, {payload: isShow}) => {
             state.isHoverFunctionsButton = isShow;
+        },
+        fetchCardItems: (state => {
+        }),
+
+        cardItemLoadSuccess: (state, {payload: cardItemsArray}) => {
+            state.cardsArrayFunctions = cardItemsArray
         },
 
     }

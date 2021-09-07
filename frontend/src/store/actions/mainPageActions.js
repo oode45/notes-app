@@ -1,5 +1,7 @@
 import mainPage from "../slices/mainPageSlice"
 
 export const {
-    hoverFunctionsButton
+    hoverFunctionsButton,
+    fetchCardItems,
+    cardItemLoadSuccess,
 } = mainPage.actions;
