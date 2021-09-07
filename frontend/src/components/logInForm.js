@@ -6,7 +6,7 @@ import FacebookLogin from "../UI/FacebookLogin";
 import Container from "@material-ui/core/Container";
 
 
-const LogInForm = (props) => {
+const LogInForm = () => {
     const dispatch = useDispatch()
 
     const sendForm = event => {
@@ -15,9 +15,7 @@ const LogInForm = (props) => {
             username: event.target.name.value,
             password: event.target.password.value
         }))
-
     }
-
     return (
         <>
             <Container component="section" maxWidth="xs">
@@ -27,7 +25,7 @@ const LogInForm = (props) => {
                 <FacebookLogin/>
             </Container>
         </>
-    );
-};
+    )
+}
 
-export default LogInForm;
+export default LogInForm

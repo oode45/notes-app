@@ -8,7 +8,7 @@ const AnonymousMenu = () => {
             <Button component={Link} to="/register" color="inherit">Sign up</Button>
             <Button component={Link} to="/login" color="inherit">Sign in</Button>
         </>
-    );
-};
+    )
+}
 
-export default AnonymousMenu;
+export default AnonymousMenu

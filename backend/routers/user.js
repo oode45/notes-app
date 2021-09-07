@@ -1,7 +1,7 @@
-const {nanoid} = require("nanoid")
-const express = require('express')
 const User = require('../database/models/User')
 const config = require('../config')
+const {nanoid} = require("nanoid")
+const express = require('express')
 const axios = require("axios")
 
 const user = express.Router()

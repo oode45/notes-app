@@ -3,7 +3,7 @@ import {Route, Switch} from "react-router-dom"
 import Layout from "./UI/Layout"
 import Register from "./containers/RegistrationForm"
 import Login from "./components/logInForm"
-import NotesPage from "./containers/NotesPage";
+import NotesPage from "./containers/NotesPage"
 
 
 const App = () => {

@@ -1,9 +1,10 @@
-import Box from '@material-ui/core/Box';
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import React from "react";
-import Container from "@material-ui/core/Container";
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import TextField from "@material-ui/core/TextField"
+import Container from "@material-ui/core/Container"
+import Button from "@material-ui/core/Button"
+import Box from '@material-ui/core/Box'
+import PropTypes from "prop-types"
+import React from "react"
 
 const useStyles = makeStyles((theme) => ({
     submit: {
@@ -13,23 +14,28 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column'
     }
-}));
+}))
 
-const InputForm = (props) => {
+const InputForm = ({emit, typeOfAuthorization}) => {
     const classes = useStyles()
     return (
         <Box color="text.primary" mt={2}>
-            <form onSubmit={props.emit} noValidate>
+            <form onSubmit={emit} noValidate>
                 <Container className={classes.form}>
                     <TextField id="outlined-basic" margin="dense" label="User name" name="name" variant="outlined"/>
                     <TextField id="outlined-basic" margin="dense" label="Password" name="password" variant="outlined"/>
                     <Button variant="contained" className={classes.submit}
-                            type="submit">{props.typeOfAuthorization}</Button>
+                            type="submit">{typeOfAuthorization}</Button>
                 </Container>
             </form>
 
         </Box>
-    );
-};
+    )
+}
 
-export default InputForm;
+export default InputForm
+
+InputForm.propTypes = {
+    emit: PropTypes.func,
+    typeOfAuthorization: PropTypes.string
+}

@@ -1,10 +1,10 @@
-import {loadFromLocalStorage, saveToLocalStorage} from "./localStorage";
-import {initialState} from "./slices/userSlice";
-import axiosApi from "../axiosApi";
-import createSagaMiddleware from 'redux-saga';
-import rootSaga from "./rootSaga";
-import {configureStore} from "@reduxjs/toolkit";
-import rootReducer from "./rootReducer";
+import {loadFromLocalStorage, saveToLocalStorage} from "./localStorage"
+import {initialState} from "./slices/userSlice"
+import {configureStore} from "@reduxjs/toolkit"
+import createSagaMiddleware from 'redux-saga'
+import rootReducer from "./rootReducer"
+import axiosApi from "../axiosApi"
+import rootSaga from "./rootSaga"
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -43,4 +43,4 @@ axiosApi.interceptors.response.use(res => res, e => {
     throw e;
 })
 
-export default store;
+export default store

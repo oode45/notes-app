@@ -1,5 +1,5 @@
-import axios from 'axios'
-import {apiDomain} from './config'
+import axios from "axios"
+import {apiDomain} from "./config"
 
 const musicUrl = axios.create({
     baseURL: apiDomain

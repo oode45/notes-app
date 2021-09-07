@@ -1,11 +1,11 @@
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Container from "@material-ui/core/Container"
+import PropTypes from 'prop-types'
 import AppToolbar from "./Toolbar"
 import React from 'react'
 
 
 const Layout = ({children}) => {
-
     return (
         <>
             <CssBaseline/>
@@ -18,7 +18,11 @@ const Layout = ({children}) => {
                 </Container>
             </main>
         </>
-    );
-};
+    )
+}
 
-export default Layout;
+export default Layout
+
+Layout.propTypes = {
+    children: PropTypes.object
+}

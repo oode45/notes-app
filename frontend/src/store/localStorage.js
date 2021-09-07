@@ -1,7 +1,7 @@
 export const saveToLocalStorage = state => {
     try {
         const serializedState = JSON.stringify(state);
-        localStorage.setItem('musicAppState', serializedState);
+        localStorage.setItem('notesAppState', serializedState);
     } catch (e) {
         console.log('Could not save state');
     }
@@ -9,7 +9,7 @@ export const saveToLocalStorage = state => {
 
 export const loadFromLocalStorage = () => {
     try {
-        const serializedState = localStorage.getItem('musicAppState');
+        const serializedState = localStorage.getItem('notesAppState');
         if (serializedState === null) {
             return undefined;
         }

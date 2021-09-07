@@ -1,8 +1,8 @@
-import {useDispatch} from "react-redux";
-import InputForm from "../components/inputForm";
-import React from "react";
 import {registerRequest} from "../store/actions/userActions"
-import Container from "@material-ui/core/Container";
+import Container from "@material-ui/core/Container"
+import InputForm from "../components/inputForm"
+import {useDispatch} from "react-redux"
+import React from "react"
 
 const RegistrationForm = () => {
     const dispatch = useDispatch()
@@ -24,4 +24,4 @@ const RegistrationForm = () => {
     );
 };
 
-export default RegistrationForm;
+export default RegistrationForm

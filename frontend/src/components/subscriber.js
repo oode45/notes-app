@@ -1,15 +1,24 @@
-import React from 'react';
-import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button"
+import PropTypes from 'prop-types'
+import React from 'react'
 
-const Subscriber = (props) => {
-    const buttonText = props.type==='subscribe'?'Add':'Remove'
+const Subscriber = ({type, username, subscribe, id}) => {
+    const buttonText = type==='subscribe'?'Add':'Remove'
     return (
         <div>
-            <div>{props.username} <Button onClick={() => {
-                props.subscribe(props.id)
+            <div>{username} <Button onClick={() => {
+                subscribe(id)
             }}>{buttonText}</Button></div>
         </div>
-    );
-};
+    )
+}
 
-export default Subscriber;
+Subscriber.propTypes = {
+    type: PropTypes.string,
+    username: PropTypes.string,
+    subscribe: PropTypes.func,
+    id: PropTypes.string
+
+}
+
+export default Subscriber

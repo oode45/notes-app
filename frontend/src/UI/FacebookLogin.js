@@ -1,10 +1,10 @@
-import React from 'react'
-import {useDispatch} from "react-redux"
 import FacebookLoginButton from 'react-facebook-login/dist/facebook-login-render-props'
-import {Button} from "@material-ui/core"
-import FacebookIcon from '@material-ui/icons/Facebook'
 import {loginFacebookRequest} from "../store/actions/userActions"
+import FacebookIcon from '@material-ui/icons/Facebook'
+import {Button} from "@material-ui/core"
+import {useDispatch} from "react-redux"
 import {faceBookId} from '../config'
+import React from 'react'
 
 
 const FacebookLogin = () => {
@@ -34,6 +34,6 @@ const FacebookLogin = () => {
             callback={facebookResponse}
         />
     )
-};
+}
 
-export default FacebookLogin;
+export default FacebookLogin

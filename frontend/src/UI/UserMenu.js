@@ -1,7 +1,7 @@
-import React from 'react';
-import {Button} from "@material-ui/core";
-import {logoutRequest} from "../store/actions/userActions";
-import {useDispatch} from "react-redux";
+import {logoutRequest} from "../store/actions/userActions"
+import {Button} from "@material-ui/core"
+import {useDispatch} from "react-redux"
+import React from 'react'
 
 const UserMenu = () => {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const UserMenu = () => {
         <>
             <Button onClick={() => dispatch(logoutRequest())} color="inherit">Log out</Button>
         </>
-    );
-};
+    )
+}
 
-export default UserMenu;
+export default UserMenu
